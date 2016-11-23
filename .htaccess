@@ -1,0 +1,3 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^(_[a-zA-Z]*)/(_[a-zA-Z]*)/$  index.php?control=$1&method=$2 [L]
