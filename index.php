@@ -23,9 +23,13 @@ if (isset($_SESSION['controll'])){
 
 ################Fonctionnement routeur ############################
 //Créer le controleur
-$controleur=new Controlleur.$_GET['control']();
-//Appel la bonne methode
-$controleur->$_GET['method']();
+if (isset($_GET['control'])){
+    $nom_controleur="Controleur".$_GET['control'];
+    $controleur=new $nom_controleur($controll);
+    //Appel la bonne methode
+    $method="Action".$_GET['method'];
+    $controleur->$method();
+}
 
 
 
