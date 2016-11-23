@@ -8,7 +8,11 @@
  */
 
 function __autoload($class_name) {
-    include 'class/'.$class_name . '.php';
+    $file='class/'.$class_name . '.php';
+    if (file_exists($file)==false){
+        $file='controler/'.$class_name . '.php';
+    }
+    include ($file);
 }
 
 if (isset($_SESSION['controll'])){
@@ -17,8 +21,15 @@ if (isset($_SESSION['controll'])){
     $controll=new ControlleurJeu($_POST);
 }
 
+################Fonctionnement routeur ############################
+//Créer le controleur
+$controleur=new Controlleur.$_GET['control']();
+//Appel la bonne methode
+$controleur->$_GET['method']();
 
-$controll->Jouer();
+
+
+
 $controll->AfficherLance();
 
 
