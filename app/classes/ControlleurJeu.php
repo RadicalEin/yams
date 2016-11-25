@@ -1,5 +1,5 @@
 <?php
-
+namespace app\classes;
 /**
  * Created by IntelliJ IDEA.
  * User: clement
@@ -47,8 +47,9 @@ class ControlleurJeu{
 
         $des=$this->lancer->LancerDes();
         $verif=new VerifResults();
+
         $pts=$verif->CheckResults($this->lancer->GetDes());
-        ;
+        return array("pts"=>$pts,"des"=>$this->lancer->GetDes());
     }
 
     public function AfficherLance(){

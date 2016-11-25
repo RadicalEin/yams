@@ -1,5 +1,5 @@
 <?php
-
+namespace app\classes;
 /**
  * Created by IntelliJ IDEA.
  * User: clement

@@ -1,5 +1,5 @@
 <?php
-
+namespace app\classes;
 /**
  * Created by IntelliJ IDEA.
  * User: clement
@@ -29,7 +29,7 @@ class view{
 
     public function InsertPlayerInput($nb_player){
         $player_count=0;
-        echo "<form action='index.php?action=play' method='post'>";
+        echo "<form action='index3.php?action=play' method='post'>";
         while($player_count<$nb_player){
             $player_count++;
             echo "<input type='text' name='player".$player_count."' placeholder='Joueur ".$player_count."'/><br />";
