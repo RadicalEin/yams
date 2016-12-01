@@ -1,3 +1,4 @@
 Options +FollowSymlinks
 RewriteEngine on
 RewriteRule ^([a-zA-Z]*)-([a-zA-Z]*)$  index.php?control=$1&method=$2 [L]
+RewriteRule ^([a-zA-Z]*)-([a-zA-Z]*)-([a-zA-Z]*)_([a-zA-Z0-9]*)$ index.php?control=$1&method=$2&$3=$4 [L]

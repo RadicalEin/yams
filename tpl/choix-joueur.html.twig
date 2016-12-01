@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% block head %}
+        {% include "blocks/head.html.twig" %}
+        <title>{% block title %}Choix joueurs{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+
+<header>
+
+</header>
+
+    <div class="col-md-4 offset-md-4 text-md-center">
+        <a href="Action-Nbjoueur-number_1" title="1 joueur"><img src="ressources/images/1-joueur.png" alt="1 joueur" class="player-btn"/></a>
+        <a href="Action-Nbjoueur-number_2" title="2 joueurs"><img src="ressources/images/2-joueur.png" alt="2 joueurs" class="player-btn"/></a><br />
+        <a href="Action-Nbjoueur-number_3" title="3 joueurs"><img src="ressources/images/3-joueur.png" alt="3 joueurs" class="player-btn"/></a>
+        <a href="Action-Nbjoueur-number_4" title="4 joueurs"><img src="ressources/images/4-joueur.png" alt="4 joueurs" class="player-btn"/></a><br />
+    </div>
+
+{% block script %}
+    <script src="ressources/jquery/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src="ressources/jquery/jquery.js" type="text/javascript"></script>
+{% endblock %}
+</body>
+</html>
+

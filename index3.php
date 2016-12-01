@@ -33,7 +33,7 @@ if (isset($_GET['control'])){
 
 
 
-
+/*
 $controll->AfficherLance();
 
 
@@ -51,7 +51,7 @@ if (isset($_POST['nb_player'])){
             echo 'Veuillez inscrire le nom des joueurs.';
             echo "<a href='index3.php' title='Retour'>retour</a>";
         }
-    }
+    }*/
 
 
 $_SESSION['controll']=serialize($controll);

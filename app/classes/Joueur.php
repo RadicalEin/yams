@@ -10,6 +10,7 @@ class Joueur{
     
     private $nom;
     private $score;
+    private $nb_lancer=0;
     
     public function __construct($nom){
         $this->nom=$nom;
@@ -17,6 +18,14 @@ class Joueur{
 
     public function CompterPoints($score){
 
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbLancer()
+    {
+        return $this->nb_lancer;
     }
 
 }

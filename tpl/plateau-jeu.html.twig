@@ -1,8 +1,6 @@
 {% extends "blocks/body.html.twig" %}
 
-{% block title %}
-    yams en ligne
-{% endblock %}
+{% block title %} yams en ligne {% endblock %}
 
 
 {% block head %}
@@ -14,11 +12,10 @@
 
 {% block body %}
 
-
         {% include "elements/des.html.twig" %}
+        {% include "elements/tableau-score.html.twig" %}
 
-
-    {{ parent() }}
+   {#{{ parent() }}#}
 
 
 {% endblock %}

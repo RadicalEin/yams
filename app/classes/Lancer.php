@@ -20,6 +20,7 @@ class Lancer{
 
     #Méthode de lancement de dés
     public function LancerDes(){
+        
         $count=0;                                                                                                       // Un compteur est initialisé à 0
         while($count<$this->nb_des){                                                                                    // Tant que le compteur est inférieur au nombre de dés à lancer
             $this->de[$count]=new Des();                                                                                // L'attribut '$de' s'initialise avec pour index la valeur de $count et créé un objet dés
@@ -40,6 +41,14 @@ class Lancer{
 
         return $val_de;                                                                                                 // La variable avec les valeurs de tous les dés est retournée
     }
-
     
+    private function CheckLancer($nblancer){
+        if ($nblancer < 3) {
+            return "ok";
+        } else {
+            return "not ok";
+        }
+        $nblancer++;
+    }
+
 }

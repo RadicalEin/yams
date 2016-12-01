@@ -36,18 +36,18 @@ class ControlleurJeu{
         $this->view->CreerTableauxJoueurs($player_name);
     }
 
-    private function CreerJoueur(){
-        $count=0;
-        foreach ($this->joueurs as $id_joueur=>$nom_joueur){
-            $this->joueur[$count]=new Joueur($nom_joueur);
+    public function CreerJoueur($data){
+        $count=1;
+        foreach ($data as $id_joueur=>$nom_joueur){
+            $this->joueurs[$count]=new Joueur($nom_joueur);
+            $count++;
         }
+        //return $this->joueurs;
     }
 
     public function Jouer(){
-
         $des=$this->lancer->LancerDes();
         $verif=new VerifResults();
-
         $pts=$verif->CheckResults($this->lancer->GetDes());
         return array("pts"=>$pts,"des"=>$this->lancer->GetDes());
     }
@@ -55,4 +55,17 @@ class ControlleurJeu{
     public function AfficherLance(){
         $this->view->AfficherDes($this->lancer->GetDes());
     }
+
+    public function GetDataParty(){
+        $count=1;
+        foreach($this->joueurs as $id_joueur=>$nom_joueur){
+            $infojoueurs['nomjoueur'.$count]=$nom_joueur;
+            $count++;
+        }
+        /*echo '<pre>';
+        print_r($infojoueurs);
+        echo '</pre>';*/
+        return $infojoueurs;
+    }
+
 }

@@ -42,7 +42,8 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#3b4eff',GradientType=0 );
 }
 .table-button3{
-}    background-color: #3B4EFF;
+    background-color: #3B4EFF;
+}
 
 .table4{
     background: #000000;
@@ -55,4 +56,11 @@ body{
 .table-button4{
     background-color: #FF41CF;
 }
-*/
+
+.player-btn{
+    padding : 15px;
+}
+
+.player-input{
+    margin-top: 15px;
+}

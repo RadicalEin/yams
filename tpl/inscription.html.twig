@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% block head %}
+        {% include "blocks/head.html.twig" %}
+        <title>{% block title %}Choix joueurs{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="col-md-4 offset-md-4 text-md-center">
+        <form action="Action-Demarrerpartie" method="post">
+        {% for nb_player in 1..nb_player %}                                                                             <!--on parcour tous nb_player dans l'interval compris entre 1 et nb_player (valeur max)-->
+
+            <input type="text" name="player{{ nb_player }}" placeholder="Nom du joueur" class="player-input"/><br />
+
+        {% endfor %}
+            <input type="submit" value="jouer"/>
+        </form>
+    </div>
+
+<header>
+
+</header>
+
+
+</body>
+</html>

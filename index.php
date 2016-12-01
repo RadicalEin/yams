@@ -18,8 +18,9 @@ if (isset($_SESSION['controll'])){
 }else{
     $controll=new classes\ControlleurJeu($_POST);
 }
-//$toto=new controler\ControleurAction(new classes\ControlleurJeu());
-################Fonctionnement routeur ############################
+
+################ Fonctionnement routeur ############################
+
 //Créer le controleur
 if (isset($_GET['control'])){
     $nom_controleur="app\\controler\\Controleur".$_GET['control'];
@@ -27,9 +28,18 @@ if (isset($_GET['control'])){
     //Appel la bonne methode
     $method="Action".$_GET['method'];
     $controleur->$method();
+}else{
+    $controleur=new controler\ControleurAction($controll);
+    $controleur->Racine();
 }
+/*$controll->CreerJoueur(array('clement', 'lionel'));
+$controll->GetDataParty();*/
 
 
+
+################ Mise en session des informations ############################
+
+$_SESSION['controll']=serialize($controll);
 
 
 

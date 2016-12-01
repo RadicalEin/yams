@@ -15,6 +15,6 @@ $("#relancer").click(function(){
         success :function(code_html, statut) { // code_html contient le HTML renvoyé
             $("#des").html(code_html);
         }
-            });
+    });
 });
 
