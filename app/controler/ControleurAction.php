@@ -28,11 +28,18 @@ class ControleurAction{
 
     public function ActionRelancer(){
         $infotour=$this->game->Jouer();
-        echo $this->twig->render('ajax/results.html.twig', array('pts' => $infotour['pts'], 'des'=>$infotour['des']));
+        echo '<pre>';
+        print_r($infotour);
+        echo '</pre>';
+        echo $this->twig->render('plateau-jeu.html.twig', array('pts' => $infotour['pts'], 'des'=>$infotour['des']));
     }
     
     public function ActionGarder(){
-        
+        $infotour=$this->game->Jouer();
+        echo '<pre>';
+        print_r($infotour);
+        echo '</pre>';
+        echo $this->twig->render('plateau-jeu.html.twig', array('pts'=> $infotour['pts'], 'des' => $infotour['des']));
     }
 
     public function Racine(){
