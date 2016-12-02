@@ -12,22 +12,23 @@ body{
 }
 
 .table1{
-    background: #000000;
+    background-color: #000000;
+    /*background: #000000;
     background: -moz-linear-gradient(left, #000000 75%, #14e891 95%);
     background: -webkit-linear-gradient(left, #000000 75%,#14e891 95%);
     background: linear-gradient(to right, #000000 75%,#14e891 95%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#14e891',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#14e891',GradientType=1 );*/
 }
 .table-button1{
-    background-color: #14E891;
+    background-color: #000000;
 }
 
 .table2{
-    background: #000000;
+    /*background: #000000;
     background: -moz-linear-gradient(left, #000000 75%, #f6ff00 99%);
     background: -webkit-linear-gradient(left, #000000 75%,#f6ff00 99%);
     background: linear-gradient(to right, #000000 75%,#f6ff00 99%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#f6ff00',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#f6ff00',GradientType=1 );*/
 }
 
 .table-button2{
@@ -35,22 +36,22 @@ body{
 }
 
 .table3{
-    background: #000000;
+    /*background: #000000;
     background: -moz-linear-gradient(top, #000000 58%, #3b4eff 100%);
     background: -webkit-linear-gradient(top, #000000 58%,#3b4eff 100%);
     background: linear-gradient(to bottom, #000000 58%,#3b4eff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#3b4eff',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#3b4eff',GradientType=0 );*/
 }
 .table-button3{
     background-color: #3B4EFF;
 }
 
 .table4{
-    background: #000000;
+    /*background: #000000;
     background: -moz-linear-gradient(top, #000000 58%, #ff41cf 100%);
     background: -webkit-linear-gradient(top, #000000 58%,#ff41cf 100%);
     background: linear-gradient(to bottom, #000000 58%,#ff41cf 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ff41cf',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ff41cf',GradientType=0 );*/
 }
 
 .table-button4{
@@ -63,4 +64,8 @@ body{
 
 .player-input{
     margin-top: 15px;
+}
+
+.btn{
+
 }

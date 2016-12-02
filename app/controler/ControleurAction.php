@@ -20,6 +20,9 @@ class ControleurAction{
 
     public function ActionJouer(){
         $infotour=$this->game->Jouer();
+        echo '<pre>';
+        print_r($infotour);
+        echo '</pre>';
         echo $this->twig->render('plateau-jeu.html.twig', array('pts' => $infotour['pts'], 'des'=>$infotour['des']));
     }
 
@@ -46,9 +49,13 @@ class ControleurAction{
     
     public function ActionDemarrerpartie(){
         $nomjoueurs=$_POST;
-        echo '<pre>';
+        /*echo '<pre>';
         print_r($nomjoueurs);
-        echo '</pre>';
-        echo $this->twig->render('plateau-jeu.html.twig', array('nomjouers'=>$nomjoueurs));
+        echo '</pre>';*/
+        echo $this->twig->render('plateau-jeu.html.twig', array('nomjoueurs'=>$nomjoueurs));
+    }
+
+    public function ActionDemarrertour(){
+
     }
 }

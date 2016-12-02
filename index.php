@@ -5,6 +5,9 @@
  * Date: 23/11/16
  * Time: 17:05
  */
+
+session_start();
+
 use app\classes;
 use app\controler;
 require_once 'vendor/autoload.php';

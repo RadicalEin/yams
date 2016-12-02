@@ -1,21 +1,22 @@
-{% for nom in nomjoueur %}
-<p>une connerie</p>
+{% for nom in nomjoueurs %}
     <div class="container">
         <div class="row">
             <div class="col-xl-6">
                 <table class="table table-responsive">
                     <tr>
-                        <th colspan="5" class="text-uppercase table1 text-white" ><b>{{ nom }}</b></th><th colspan="2" class="table-button1"><a href="index2.php?action=lancer"></a></th>
+                        <th colspan="5" class="text-uppercase table1 text-white" ><b>{{ nom }}</b></th><th colspan="2" ><a href="Action-Jouer" class="table-button1" id="lancer">Lancer</a></th>
                     </tr>
                     <tr class="text-uppercase">
                         <td>dé 1</td><td>dé 2</td><td>dé 3</td><td>dé 4</td><td>dé 5</td><td>résultat</td><td>score</td>
                     </tr>
-                    {#{% block score %}
-                        {% include "blocks/score.html.twig" %}
-                    {% endblock %}#}
+                    {% block score %}
+                        {% include "elements/score.html.twig" %}
+                    {% endblock %}
                 </table>
             </div>
         </div>
     </div>
 
 {% endfor %}
+
+<!--TODO : créer des regex pour sécuriser et éviter les noms trop longs-->

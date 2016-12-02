@@ -18,3 +18,13 @@ $("#relancer").click(function(){
     });
 });
 
+$("#lancer").click(function(){
+    $.ajax({
+        url : 'Action-Jouer',
+        type : 'GET',
+        datatype : 'html',
+        success :  function(code_html, statut) {
+            $("#des").html(code_html);
+        }
+    });
+});
