@@ -42,7 +42,6 @@ class ControlleurJeu{
             $this->joueurs[$count]=new Joueur($nom_joueur);
             $count++;
         }
-        //return $this->joueurs;
     }
 
     public function Jouer(){
@@ -58,12 +57,13 @@ class ControlleurJeu{
 
     public function GetDataParty(){
         $count=1;
+        $infojoueurs=array();
         foreach($this->joueurs as $id_joueur=>$nom_joueur){
             $infojoueurs['nomjoueur'.$count]=$nom_joueur;
             $count++;
         }
         /*echo '<pre>';
-        print_r($infojoueurs);
+        print_r($this->joueurs);
         echo '</pre>';*/
         return $infojoueurs;
     }

@@ -10,13 +10,18 @@
 {% endblock %}
 
 
+{% block header %}
+
+    {% include "elements/des.html.twig" %}
+
+{% endblock %}
+
+
 {% block body %}
 
-        {% include "elements/des.html.twig" %}
-        {% include "elements/tableau-score.html.twig" %}
+    {% include "elements/tableau-score.html.twig" %}
 
    {#{{ parent() }}#}
-
 
 {% endblock %}
 

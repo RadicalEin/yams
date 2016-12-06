@@ -19,30 +19,37 @@ class ControleurAction{
     }
 
     public function ActionJouer(){
-        $infotour=$this->game->Jouer();
-        echo '<pre>';
-        print_r($infotour);
-        echo '</pre>';
+            $infotour=$this->game->Jouer();
+        $infojoueurs=$this->game->GetDataParty();
+        /*echo '<pre>';
+        print_r($infojoueur);
+        echo '</pre>';*/
         echo $this->twig->render('plateau-jeu.html.twig', array('pts' => $infotour['pts'], 'des'=>$infotour['des']));
+        echo $this->twig->render('elements/tableau-score.html.twig', array('nomjoueurs'=>$infojoueurs));
     }
 
     public function ActionRelancer(){
         $infotour=$this->game->Jouer();
-        echo '<pre>';
+        /*echo '<pre>';
         print_r($infotour);
-        echo '</pre>';
+        echo '</pre>';*/
         echo $this->twig->render('plateau-jeu.html.twig', array('pts' => $infotour['pts'], 'des'=>$infotour['des']));
     }
     
     public function ActionGarder(){
-        $infotour=$this->game->Jouer();
+        /*$infotour=$this->game->Jouer();
         echo '<pre>';
         print_r($infotour);
-        echo '</pre>';
+        echo '</pre>';*/
         echo $this->twig->render('plateau-jeu.html.twig', array('pts'=> $infotour['pts'], 'des' => $infotour['des']));
     }
 
     public function Racine(){
+        echo '<a href="index.php?nav=index" title="r.a.z" class="btn-danger">Casse moi tout là d\'dans</a> ';
+        if (isset($_GET['nav']) and $_GET['nav']=='index'){
+            session_destroy();
+            unset($_SESSION);
+        }
         $infojoueurs=$this->game->GetDataParty();
         if($infojoueurs==null){
             echo $this->twig->render('choix-joueur.html.twig');
@@ -56,13 +63,19 @@ class ControleurAction{
     
     public function ActionDemarrerpartie(){
         $nomjoueurs=$_POST;
-        /*echo '<pre>';
-        print_r($nomjoueurs);
-        echo '</pre>';*/
+        $this->CreerJoueurs($nomjoueurs);
         echo $this->twig->render('plateau-jeu.html.twig', array('nomjoueurs'=>$nomjoueurs));
+    }
+
+    private function CreerJoueurs($data){
+        $this->game->CreerJoueur($data);
     }
 
     public function ActionDemarrertour(){
 
+    }
+
+    public function GetControleurJeu(){
+        return $this->game;
     }
 }
