@@ -28,4 +28,20 @@ class Joueur{
         return $this->nb_lancer;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
 }
