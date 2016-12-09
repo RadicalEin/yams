@@ -40,5 +40,4 @@ class Des{
         return $this->face_max;
     }
 
-
 }

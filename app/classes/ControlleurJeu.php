@@ -68,4 +68,33 @@ class ControlleurJeu{
         return $infojoueurs;
     }
 
+    public function DemarrerTour(){
+        
+    }
+    ######################################### GETTERS ##################################################################
+
+    /**
+     * @return mixed
+     */
+    public function getTourMax()
+    {
+        return $this->tour_max;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQuijoue()
+    {
+        return $this->quijoue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
 }
