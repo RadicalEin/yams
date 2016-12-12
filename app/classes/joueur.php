@@ -10,6 +10,7 @@ class Joueur{
     
     private $nom;
     private $score;
+    private $score_total;
     
     public function __construct($nom){
         $this->nom=$nom;

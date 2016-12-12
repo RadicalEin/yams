@@ -18,9 +18,9 @@ $twig = new Twig_Environment($loader);
 
 if (isset($_SESSION['controll'])){
     $controll=unserialize($_SESSION['controll']);
-    /*echo '<pre>';
+    echo '<pre>';
     print_r($controll);
-    echo '</pre>';*/
+    echo '</pre>';
 }else{
     $controll=new classes\ControlleurJeu($_POST);
 }
@@ -38,10 +38,6 @@ if (isset($_GET['control'])){
     $controleur=new controler\ControleurAction($controll);
     $controleur->Racine();
 }
-/*$controll->CreerJoueur(array('clement', 'lionel'));
-$controll->GetDataParty();*/
-
-
 
 ################ Mise en session des informations ############################
 

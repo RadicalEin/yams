@@ -1,10 +1,11 @@
 {% for joueur in nomjoueurs %}
+    <p>{{ joueur.Nom }}</p>
     <div class="container">
         <div class="row">
             <div class="col-xl-">
                 <table class="table table-responsive">
                     <tr>
-                        <th colspan="5" class="text-uppercase table1 text-white" ><b>{{ joueur.Nom }}</b></th><th colspan="2" ><a href="Action-Jouer" class="table-button1" id="lancer">Lancer</a></th>
+                        <th colspan="5" class="text-uppercase table-head text-white" ><b>{{ joueur.nom }}</b></th><th colspan="2" ><a href="Action-Jouer" class="table-button1" id="lancer">Lancer</a></th>
                     </tr>
                     <tr class="text-uppercase">
                         <td>dé 1</td><td>dé 2</td><td>dé 3</td><td>dé 4</td><td>dé 5</td><td>résultat</td><td>score</td>

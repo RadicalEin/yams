@@ -12,7 +12,15 @@
 
 {% block header %}
 
+    {% include "blocks/header.html.twig" %}
     {% include "elements/des.html.twig" %}
+
+{% endblock %}
+
+
+{% block tableaux %}
+
+    {% include "elements/tableau-score.html.twig" %}
 
 {% endblock %}
 

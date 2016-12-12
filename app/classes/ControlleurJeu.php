@@ -12,13 +12,14 @@ class ControlleurJeu{
 
     private $joueurs=array();
     private $lancer;                                                                                                    // Objet de lancé qui contient les dés
-    private $quijoue;
+    private $quijoue=1;
     private $nb_tour;                                                                                                   // Donne le nombre de tour passés
+    private $lancer_max;
     private $tour_max;                                                                                                  // Nombre de tour que la partie va durer
     private $result;
     private $view;
 
-    public function __construct($joueurs, $tour_max=10){
+    public function __construct($joueurs, $tour_max=10, $lancer_max=3){
         $this->lancer=new Lancer();
         $this->CreerJoueur($joueurs);
         $this->view=new view($joueurs);
@@ -68,9 +69,21 @@ class ControlleurJeu{
         return $infojoueurs;
     }
 
-    public function DemarrerTour(){
-        
+    public function SwitchJoueur(){
+        //si l'action garder existe
+        if(isset($_GET['Action']) && $_GET['Action']=='Garder'){
+            
+            //j'incrémente l'id de joueur
+
+        //Si le nombre de lancé et egal au maximum de lancé autorisé
+        }/*elseif($lancer>$this->lancer_max){
+
+            //j'incrémente l'id de joueur
+
+        }*/
+
     }
+
     ######################################### GETTERS ##################################################################
 
     /**
@@ -95,6 +108,14 @@ class ControlleurJeu{
     public function getResult()
     {
         return $this->result;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLancerMax()
+    {
+        return $this->lancer_max;
     }
 
 }
