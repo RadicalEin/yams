@@ -12,20 +12,24 @@
 
 {% block header %}
 
+    {% if nomjoueurs.etatpartie !='fini' %}
+
     {% include "blocks/header.html.twig" %}
+    {% include "elements/infoparty.html.twig" %}
     {% include "elements/des.html.twig" %}
 
-{% endblock %}
-
-
-{% block tableaux %}
-
-    {% include "elements/tableau-score.html.twig" %}
+    {% else %}
+        <h1> Fin de la partie </h1>
+    {% endif %}
 
 {% endblock %}
+
+
+
 
 
 {% block body %}
+
 
     {% include "elements/tableau-score.html.twig" %}
 

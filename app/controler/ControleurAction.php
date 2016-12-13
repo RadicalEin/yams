@@ -20,46 +20,32 @@ class ControleurAction{
 
     public function ActionJouer(){
         $infotour=$this->game->Jouer();
-        $infojoueurs=$this->game->GetDataParty();
-        /*echo '<pre>';
-        print_r($infojoueurs);
-        echo '</pre>';*/
-        echo $this->twig->render('plateau-jeu.html.twig', array('pts' => $infotour['pts'], 'des'=>$infotour['des']));
-        echo $this->twig->render('elements/tableau-score.html.twig', array('nomjoueurs'=>$infojoueurs));
+        $this->LoadPlateau($infotour);
     }
 
     public function ActionRelancer(){
         $infotour=$this->game->Jouer();
-        $infojoueurs=$this->game->GetDataParty();
-        echo '<pre>';
-        print_r($infotour);
-        echo '</pre>';
-        
-        echo $this->twig->render('plateau-jeu.html.twig', array('pts' => $infotour['pts'], 'des'=>$infotour['des']));
-        echo $this->twig->render('elements/tableau-score.html.twig', array('nomjoueurs'=>$infojoueurs));
+        $this->LoadPlateau($infotour);
     }
     
     public function ActionGarder(){
+
+        $this->game->Garder();
         $infotour=$this->game->Jouer();
-        $infojoueurs=$this->game->GetDataParty();
-        $this->game->SwitchJoueur();
-        echo '<pre>';
-        print_r($infotour);
-        echo '</pre>';
-        echo $this->twig->render('plateau-jeu.html.twig', array('pts'=> $infotour['pts'], 'des' => $infotour['des']));
-        echo $this->twig->render('elements/tableau-score.html.twig', array('nomjoueurs'=>$infojoueurs));
+        $this->LoadPlateau($infotour);
     }
 
-    public function Racine(){                                                                                           //Méthode pour utiliser les données des joueurs
+    public function Racine(){                                                                                           //Utilisiation les données des joueurs
         if (isset($_GET['nav']) and $_GET['nav']=='index'){
             session_destroy();
             unset($_SESSION);
         }
         $infojoueurs=$this->game->GetDataParty();
-        if($infojoueurs==null){
+        if(isset($infojoueurs['player'])==false){
             echo $this->twig->render('choix-joueur.html.twig');
         }
     }
+
 
     public function ActionNbjoueur(){                                                                                   //Définit le nombre de joueurs à créer
         $nb_player=$_GET['number'];
@@ -68,10 +54,8 @@ class ControleurAction{
     
     public function ActionDemarrerpartie(){
         $nomjoueurs=$_POST;
-        $infojoueurs=$this->game->GetDataParty();
         $this->CreerJoueurs($nomjoueurs);
-        echo $this->twig->render('plateau-jeu.html.twig', array('nomjoueurs'=>$nomjoueurs));
-        echo $this->twig->render('elements/tableau-score.html.twig', array('nomjoueurs'=>$infojoueurs));
+        $this->LoadPlateau();
     }
 
     private function CreerJoueurs($data){
@@ -81,7 +65,12 @@ class ControleurAction{
     public function GetControleurJeu(){
         return $this->game;
     }
+    private function LoadPlateau($dataplay=null){
 
+        $infojoueurs=$this->game->GetDataParty();
+
+        echo $this->twig->render('plateau-jeu.html.twig', array('nomjoueurs'=>$infojoueurs,'dataplay'=>$dataplay));
+    }
     private function Printr($tab){
         echo '<pre>';
         print_r($tab);

@@ -35,20 +35,12 @@ class Lancer{
         $count=0;                                                                                                       // Initialisation d'un compteur à 0
         foreach($this->de as $numdee=>$objetdee){                                                                       // Pour chaque dés contenus dans le tableau
             $val_de[$count]=$objetdee->getValeur();                                                                     // On initialise la variable avec la valeur du compteur. La variable est égale à la valeur du getter de chaque objet dés
-            $count++;                                                                                                   // On incrémente le compteur
+            $count++;
 
         }
 
         return $val_de;                                                                                                 // La variable avec les valeurs de tous les dés est retournée
     }
     
-    private function CheckLancer($nblancer){
-        if ($nblancer < 3) {
-            return "ok";
-        } else {
-            return "not ok";
-        }
-        $nblancer++;
-    }
 
 }

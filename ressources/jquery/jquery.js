@@ -2,9 +2,9 @@
  * Created by clement on 25/11/16.
  */
 
-$("#relancer").click(function(){
+$("#relanceRr").click(function(){
     $.ajax({
-        url : 'Action-Relancer', // La ressource ciblée
+        url : 'Action-RelancEer', // La ressource ciblée
         type : 'GET', // Le type de la requête HTTP
         /**
 
@@ -18,7 +18,7 @@ $("#relancer").click(function(){
     });
 });
 
-$("#lancer").click(function(){
+$("#lancRer").click(function(){
     $.ajax({
         url : 'Action-Jouer',
         type : 'GET',
